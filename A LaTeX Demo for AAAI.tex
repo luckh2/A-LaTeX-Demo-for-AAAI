@@ -1,0 +1,150 @@
+\def\year{2017}\relax
+%File: formatting-instruction.tex
+\documentclass[letterpaper]{article}
+\usepackage{aaai17}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\frenchspacing
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+%\pdfinfo{
+%/Title (Insert Your Title Here)
+%/Author (Put All Your Authors Here, Separated by Commas)}
+\setcounter{secnumdepth}{0}
+
+\usepackage{mathtools}
+\usepackage{amsthm}
+
+\usepackage{float}
+\usepackage[colorlinks,linkcolor=red,anchorcolor=red,citecolor=red]{hyperref}
+\usepackage[pdftex]{graphicx}
+\graphicspath{{./graphics/}}
+%\usepackage{subfigure}
+\usepackage{subfig}
+\usepackage{multicol}
+\usepackage{paralist}
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{cases}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+
+\setlength{\belowcaptionskip}{0pt}
+\setlength{\abovecaptionskip}{0pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{color}
+
+
+\makeatletter
+\newif\if@restonecol
+\makeatother
+\let\algorithm\relax
+\let\endalgorithm\relax
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}%[ruled,vlined]{
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}  % Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{\textbf{Output:}} % Use Output in the format of Algorithm
+\setcounter{secnumdepth}{0}
+ \begin{document}
+% The file aaai.sty is the style file for AAAI Press
+% proceedings, working notes, and technical reports.
+%
+\title{A LaTeX Demo for AAAI}
+\author{Jinliang Xu\\
+Beijing University of Posts and Telecommunications\\
+}
+\maketitle
+\begin{abstract}
+AAAI creates proceedings, working notes, and technical reports directly from electronic source furnished by the authors. To ensure that all papers in the publication have a uniform appearance, authors must adhere to the following instructions.
+\end{abstract}
+
+\section{Introduction}
+\noindent Congratulations on having a paper selected for inclusion in an AAAI Press proceedings or technical report! This document details the requirements necessary to get your accepted paper published using \LaTeX{}. If you are using Microsoft Word, instructions are provided in a different document. If you want to use some other formatting software, you must obtain permission from AAAI Press first.
+
+The instructions herein are provided as a general guide for experienced \LaTeX{} users who would like to use that software to format their paper for an AAAI Press publication or report. If you are not an experienced \LaTeX{} user, do not use it to format your paper. AAAI cannot provide you with support and the accompanying style files are \textbf{not} guaranteed to work. If the results you obtain are not in accordance with the specifications you received, you must correct your source file to achieve the correct result.
+
+These instructions are generic. Consequently, they do not include specific dates, page charges, and so forth. Please consult your specific written conference instructions for details regarding your submission. Please review the entire document for specific instructions that might apply to your particular situation. All authors must comply with the following:
+\begin{figure}[!ht]
+   \centering
+   \begin{center}
+     \includegraphics*[width=0.8\linewidth]{rate_order}
+   \caption{Adjustment of a worker's order with his approval rate.}
+   \label{fig:rate2order}
+   \end{center}
+\end{figure}
+
+
+
+
+
+\section{What Files to Submit}
+You must submit the following items to ensure that your paper is published:
+\begin{itemize}
+\item A fully-compliant PDF file.
+\item Your  \LaTeX{}  source file submitted as a \textbf{single} .tex file (do not use the ``input" command to include sections of your paper --- every section must be in the single source file). The only exception is the bibliography, which you may include separately. Your source must compile on our system, which includes the standard \LaTeX{} support files.
+\item All your graphics files.
+\item The \LaTeX{}-generated files (e.g. .aux and .bib file, etc.) for your compiled source.
+\item All the nonstandard style files (ones not commonly found in standard \LaTeX{} installations) used in your document (including, for example, old algorithm style files). If in doubt, include it.
+\end{itemize}
+
+
+
+\subsection{Credits}
+Any credits to a sponsoring agency should appear in the acknowledgments section, unless the agency requires different placement. If it is necessary to include this information on the front page, use
+\textbackslash thanks in either the \textbackslash author or \textbackslash title commands.
+For example:
+\begin{quote}
+\begin{small}
+\textbackslash title\{Very Important Results in AI\textbackslash thanks\{This work is
+ supported by everybody.\}\}
+\end{small}
+\end{quote}
+Multiple \textbackslash thanks commands can be given. Each will result in a separate footnote indication in the author or title with the corresponding text at the botton of the first column of the document. Note that the \textbackslash thanks command is fragile. You will need to use \textbackslash protect.
+
+Please do not include \textbackslash pubnote commands in your document.
+
+
+
+
+
+
+\section{Producing Reliable PDF\\Documents with \LaTeX{}}
+Generally speaking, PDF files are platform independent and accessible to everyone. When creating a paper for a proceedings or publication in which many PDF documents must be merged and then printed on high-resolution PostScript RIPs, several requirements must be met that are not normally of concern. Thus to ensure that your paper will look like it does when printed on your own machine, you must take several precautions:
+\begin{itemize}
+\item Use type 1 fonts (not type 3 fonts)
+\item Use only standard Times, Nimbus, and CMR font packages (not fonts like F3 or fonts with tildes in the names or fonts---other than Computer Modern---that are created for specific point sizes, like Times\~{}19) or fonts with strange combinations of numbers and letters
+\item Embed all fonts when producing the PDF
+\item Do not use the [T1]{fontenc} package (install the CM super fonts package instead)
+\end{itemize}
+
+
+
+
+
+
+\section{Related Work}
+Among the four problems of crowdsourcing, namely incentive, quality, latency and community improvement, quality  is the core, and the other three serve for it in essence. The key issue is how to estimate the worker proficiency \cite{simpson2015bayesian} or her evaluation reliability for a specific task \cite{miller2005eliciting,radanovic2013robust}. One natural approach is to use \emph{gold standard} \cite{liu2012cdas,li2015crowd}, i.e. a small amount of tasks of which the solutions are known prior to the requester while not to the workers, which can be utilized to assess each worker's proficiency on the rest tasks. However, gold standard is expensive to perform as ground truth is costly to obtain. In addition, gold standard works not well in heterogenous crowdsourcing, where a worker may be proficient at only a subset of tasks with a certain topic \cite{zhang2015task}. Taking the name entity recognition tasks in natural language processing \cite{ritter2011named} as an example, a worker may be good at recognizing names of movie stars, but not be familiar with sports teams. A step further, studies in \cite{ipeirotis2014repeated,simpson2015bayesian} assume that the tasks can be categorized into several topics and workers differ in their abilities with different topic tasks, therefore the quality of data can be improved by assigning tasks to the most appropriate workers. But nonetheless, it is still not enough as  estimation of workers' abilities relies  heavily on topic categorization.
+Another approach focuses on developing statistical techniques to post-process the collected data with uneven quality in order to improve its quality \cite{raykar2010learning,zhou2014aggregating}. However, it is appropriate only in scenarios with  repeated participation by the same worker, which seems impractical as worker crowds online is very large and is changing rapidly realtime and the number of tasks assigned to most workers is always small. In fact, the current crowdsourcing platforms such as the aforementioned Mturk and CrowdFlower, only use a worker's history records to compute her reputation (e.g. approval rate, i.e. the percentage of her reported solutions approved by the requester), and adopt the reputation as the only parameter to decide whether to assign a coming task to the worker or not. Simple through, the vulnerability is obvious as this current mechanism cannot detect a malicious worker who performs as normal to gain enough reputation in early days, and afterwards cheat the platform \cite{hoffman2009survey}.
+
+
+
+
+
+
+\bibliographystyle{aaai}
+\bibliography{reference}
+
+\end{document}
